@@ -21,7 +21,8 @@ $(document).ready(function() {
     $('.scroll-bottom').click(function() {
         $("html, body").animate({ scrollTop: $(document).height()/3 }, "slow");
         return false;
-    })
+    });
+    $('.modal-birthday').modal();
 });
 /*!
  * FullCalendar v0.0.0
@@ -16635,7 +16636,13 @@ return FC; // export for Node/CommonJS
 	},
 	dayClick: function(date, jsEvent, view) {
 	
-		alert('Clicked on: ' + date.format());
+		// alert('Clicked on: ' + date.format());
+		$('.modal-birthday').modal();
+		$('.modal-birthday').modal('open');
+		$('.modal-birthday-text').text(date.format('MMMM Do, YYYY'));
+		setTimeout(function() {
+			$('.modal-birthday').modal('close');
+		},2500);
 	
 		// alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
 	
