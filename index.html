@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <link rel="icon" type="image/x-icon" href="img/birthday-cake-emoji.png">
+  <title>Birthday Countdown</title>
+
+  <!-- CSS  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link href="https://web11105.web5.mynet.at/plugins/serfaus/events/assets/fullcalendar/fullcalendar.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="https://web11105.web5.mynet.at/plugins/serfaus/events/assets/css/calendar.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="styles/styles.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo">
+        <img src="img/birthday-cake-emoji.png" class="birthday-logo" alt="logo">
+        Birthday Countdown</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a class="click-party" href="#">Let's Party!</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a class="click-party" href="#">Let's Party!</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot bg-custom" id="index-banner">
+    <div class="container">
+        <br><br>
+        <div class="row">
+            <div class="col s6">
+                <span id="ThreeJsCanvas" class="invisible viewpoint-fadeInLeft"></span>
+            </div>
+            <div class="col s6">
+                <h1 class="title-header header center blue-text">Birthday Countdown</h1>
+                <h5 class="header col s12 light center">Let's count down to your birthday!</h5>
+                <div class="center">
+                    <button class="scroll-bottom btn-large waves-effect waves-light blue">
+                        Click Birthday Below <i class="material-icons">arrow_downward</i>
+                    </button>
+                </div>
+
+                <div id="clockdiv">
+                    <div id="countdown" class="center">
+                        <ul class="rainbow-bg">
+                            <li class="time-info"><span id="days"></span>days</li>
+                            <li class="time-info"><span id="hours"></span>Hours</li>
+                            <li class="time-info"><span id="minutes"></span>Minutes</li>
+                            <li class="time-info"><span id="seconds"></span>Seconds</li>
+                        </ul>
+                    </div>
+                    <div id="modded">
+                            <div class="progress blue lighten-4 tooltipped" data-position="top" data-tooltip="Progress was at 50% when tested">
+                                <span>Percent of time passed</span>
+                                <div class="determinate blue percent-years" style="animation: grow 2s;"></div>
+                            </div>
+                        </div>
+                    <div class="center" id="message-birthday">^ time until 12/24 (the CTO's Bithday!)</div>
+                    <div id="content" class="emoji center">
+                        <span>🥳</span>
+                        <span>🎉</span>
+                        <span>🎂</span>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        <br><br>
+
+    </div>
+  </div>
+
+  <div class="container">
+        <div class="section">
+            <div id="calendar"></div>
+        </div>
+  </div>
+  <div class="section bg-custom">
+    <div class="container">
+        <div class="section">
+
+            <!--   Icon Section   -->
+            <div class="row center">
+                <h4>Do a Critique</h2>
+                <p>The current implementation isn't perfect. How could it be improved?</p>
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text"><i class="material-icons">star</i></h2>
+                        <h5 class="center">Pick an area of improvement to implement.</h5>
+
+                        <p class="light">I focused on the user experience - to make it fun and exciting - how birthdays should be. 
+                            I added a couple three.js elements (1. emojis and geometries in the header and 2. a 3D model of a rainbow birthday cake on top of the footer). 
+                            I added an interactive calendar for the user to select their own birthdays and see how many days are left until the birthday. 
+                            When clicking on the actual birthday, confetti fireworks show up and the text changes accordingly. When clicking on another day, the text resets back again.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text"><i class="material-icons">palette</i></h2>
+                        <h5 class="center">What would happen to the current code if the date were changed, the page layout was changed or the format was changed?</h5>
+
+                        <p class="light">
+                            If the date were to be in the past, it shows a negative number.
+                            In my creation, I started with the CTO's birthday but added the ability for the user to select their own birthday. Their birthday selections show on the countdown as well as the calendar.
+                            I had also changed the page layout. I did not have enough time to make it responsive (only looks good on desktop), but I am 100% confident I am able to make it beautiful on responsive mobile and tablet views as well. 
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text"><i class="material-icons">code</i></h2>
+                        <h5 class="center">Does the current implementation follow best practices for HTML, CSS, JS and React?</h5>
+
+                        <p class="light">The code followed a basic Create React App format without major issues. 
+                            The original code had the date hard-coded and it was in the past. 
+                            The code could be updated to dynamically show the current year in real time.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper-divider">
+            </div>
+            <!--   Icon Section   -->
+            <div class="row center">
+                <h4>Spice it up</h2>
+                <p>Let's be honest, this countdown could be a whole lot more exciting.</p>
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text"><i class="material-icons">timer</i></h2>
+                        <h5 class="center">What could you do to create a greater sense of urgency?</h5>
+
+                        <p class="light">I made the background of the countdown to be animated gradient rainbow colors. 
+                            I tried out a flashing/blinking animation at first, but decided that it was distracting and I could not read the numbers well. 
+                            I also added a progress bar to show how much percentage of the year is left out of 365 days of the year. </p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text"><i class="material-icons">filter_vintage</i></h2>
+                        <h5 class="center">How would you make this countdown more aesthetically pleasing?</h5>
+
+                        <p class="light">I spent some time trying to implement <a target="_blank" href="https://codepen.io/doriancami/pen/jEJvaV">something like this</a> 
+                        effect but I did not have enough time (given the short deadline of the prompt). I added some background color and rounded edges for more contrast.
+                        I would make the site responsive.
+                    </p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text"><i class="material-icons">brush</i></h2>
+                        <h5 class="center">Trust your design instincts, and explain how your design choices impact the user experience</h5>
+
+                        <p class="light">I added animated scrolling to the top when clicking on dates on the calendar and animated scrolling to 
+                            the bottom when clicking on "click birthday below" button since I noticed the website became longer with the calendar that was added. 
+                            I added some fun looking elements like the floating emojis and 3D cake. The Roboto Serif Google Font was chosen for a classy but bubbly and fun look.
+                            I also created the swirly background png in Adoble Illustrator.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+        <br><br>
+    </div>
+    </div>
+  <div>
+    <span id="ThreeJsCanvas2" ></span>
+  </div>
+  <footer class="page-footer blue">
+    <div class="container">
+      <div class="row">
+        <div class="">
+          <h5 class="white-text">Left Field Labs <i class="material-icons" style="vertical-align: initial;">cake</i></h2></h5>
+          <p class="grey-text text-lighten-4">A Creative Technology Company</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Inspired by <a class="blue-text text-lighten-3" href="https://github.com/LeftFieldAdam/countdown">github.com/LeftFieldAdam/countdown</a>
+      </div>
+    </div>
+  </footer>
+
+<script src="https://web11105.web5.mynet.at/plugins/serfaus/events/assets/fullcalendar/lib/moment.min.js"></script>
+<script src="https://web11105.web5.mynet.at/plugins/serfaus/events/assets/fullcalendar/lib/jquery.min.js"></script>
+
+<script src="js/materialize.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@4.2.0/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r69/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-viewport-checker/1.8.8/jquery.viewportchecker.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+  
+<script src="js/init-dist.js"></script>
+
+</body>
+</html>
